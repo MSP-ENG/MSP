@@ -34,11 +34,12 @@ SECRET_KEY = os.getenv(
     'django-insecure-mspcon-dev-key-change-in-production'
 )
 
+
 # Local development:
 # DEBUG=True
 #
 # Production/Vercel:
-# Set DEBUG=False in Vercel Environment Variables
+# DEBUG=False in Vercel Environment Variables
 
 DEBUG = os.getenv(
     'DEBUG',
@@ -156,46 +157,55 @@ ASGI_APPLICATION = 'mspcon_backend.asgi.application'
 # DATABASE
 # ============================================================
 
-DB_ENGINE = os.getenv(
-    'DB_ENGINE',
-    'sqlite'
-).strip().lower()
+# Vercel + Neon provides POSTGRES_URL in production.
+# Local development continues to use SQLite.
+
+POSTGRES_URL = os.getenv('POSTGRES_URL')
 
 
-if DB_ENGINE in ('postgres', 'postgresql'):
+if POSTGRES_URL:
+
+    # --------------------------------------------------------
+    # PRODUCTION: NEON POSTGRESQL
+    # --------------------------------------------------------
 
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
 
             'NAME': os.getenv(
-                'DB_NAME',
-                'mspcon_db'
+                'PGDATABASE'
             ),
 
             'USER': os.getenv(
-                'DB_USER',
-                'postgres'
+                'POSTGRES_USER'
             ),
 
             'PASSWORD': os.getenv(
-                'DB_PASSWORD',
-                ''
+                'POSTGRES_PASSWORD'
             ),
 
             'HOST': os.getenv(
-                'DB_HOST',
-                'localhost'
+                'POSTGRES_HOST'
             ),
 
             'PORT': os.getenv(
-                'DB_PORT',
+                'POSTGRES_PORT',
                 '5432'
             ),
+
+            'OPTIONS': {
+                'sslmode': 'require',
+            },
         }
     }
 
+
 else:
+
+    # --------------------------------------------------------
+    # LOCAL DEVELOPMENT: SQLITE
+    # --------------------------------------------------------
 
     DATABASES = {
         'default': {
