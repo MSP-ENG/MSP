@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 240" fill="none" className="w-auto h-full">
+  <g id="logo-mark">
+    <!-- Letter M -->
+    <path d="M25 140V30H48L72 90L96 30H119V140H97V68L77 118H67L47 68V140H25Z" fill="#002a3c"/>
+    
+    <!-- Letter S (Gray background swoosh) -->
+    <path d="M78 80C78 52 100 38 132 38C158 38 178 48 184 68L162 78C158 66 148 58 132 58C116 58 102 66 102 78C102 92 114 98 138 104C168 112 188 122 188 150C188 180 162 196 128 196C98 196 76 182 68 160L92 148C98 162 110 174 128 174C146 174 162 164 162 150C162 134 148 128 124 120C96 112 78 102 78 80Z" fill="#6c757d" opacity="0.9"/>
+    
+    <!-- Letter P -->
+    <path d="M155 30H205C230 30 248 48 248 76C248 104 230 122 205 122H180V140H155V30ZM180 50V102H202C216 102 224 92 224 76C224 60 216 50 202 50H180Z" fill="#002a3c"/>
+    
+    <!-- High-rise Building Pillars inside P loop -->
+    <path d="M188 100V58L198 52V100H188Z" fill="#6c757d"/>
+    <path d="M200 100V46L210 40V100H200Z" fill="#002a3c"/>
+    <path d="M212 100V54L220 50V100H212Z" fill="#4a5568"/>
+
+    <!-- Bottom Dynamic Arch Swoosh -->
+    <path d="M80 148C125 118 190 115 255 142C240 124 185 106 130 124C108 132 92 140 80 148Z" fill="#002a3c"/>
+    <path d="M98 162C140 138 200 134 258 156C242 144 195 128 145 142C125 148 110 155 98 162Z" fill="#6c757d"/>
+  </g>
+
+  <!-- Typography: MSP -->
+  <text x="140" y="200" font-family="'Work Sans', 'Inter', sans-serif" font-size="44" font-weight="800" fill="#002a3c" text-anchor="middle" letter-spacing="4">MSP</text>
+
+  <!-- Typography: ENGINEERING CONSULTANT -->
+  <text x="140" y="224" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#4a5568" text-anchor="middle" letter-spacing="3.5">ENGINEERING CONSULTANT</text>
+</svg>
