@@ -8,6 +8,7 @@ Configured for production-ready deployment and local development.
 from pathlib import Path
 import os
 from dotenv import load_dotenv
+import dj_database_url
 
 
 # ============================================================
@@ -157,47 +158,27 @@ ASGI_APPLICATION = 'mspcon_backend.asgi.application'
 # DATABASE
 # ============================================================
 
-# Vercel + Neon provides POSTGRES_URL in production.
-# Local development continues to use SQLite.
+# Production/Vercel:
+# Uses Neon PostgreSQL through DATABASE_URL.
+#
+# Local development:
+# If DATABASE_URL is not present, uses SQLite.
 
-POSTGRES_URL = os.getenv('POSTGRES_URL')
+DATABASE_URL = os.getenv('DATABASE_URL')
 
 
-if POSTGRES_URL:
+if DATABASE_URL:
 
     # --------------------------------------------------------
     # PRODUCTION: NEON POSTGRESQL
     # --------------------------------------------------------
 
     DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-
-            'NAME': os.getenv(
-                'PGDATABASE'
-            ),
-
-            'USER': os.getenv(
-                'POSTGRES_USER'
-            ),
-
-            'PASSWORD': os.getenv(
-                'POSTGRES_PASSWORD'
-            ),
-
-            'HOST': os.getenv(
-                'POSTGRES_HOST'
-            ),
-
-            'PORT': os.getenv(
-                'POSTGRES_PORT',
-                '5432'
-            ),
-
-            'OPTIONS': {
-                'sslmode': 'require',
-            },
-        }
+        'default': dj_database_url.parse(
+            DATABASE_URL,
+            conn_max_age=600,
+            ssl_require=True,
+        )
     }
 
 
