@@ -118,7 +118,7 @@ export const dataService = {
 
   // Enquiries (Contact submission via Django REST Framework API)
   async submitEnquiry(enquiry) {
-    const backendUrl = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000/api/enquiries/';
+    const backendUrl = import.meta.env.VITE_API_URL || 'https://mspbackend.vercel.app/api/enquiries/';
 
     const response = await fetch(backendUrl, {
       method: 'POST',
