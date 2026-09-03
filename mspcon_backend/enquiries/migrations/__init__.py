@@ -1,0 +1,1 @@
+# enquiries migrations package initializer
