@@ -75,8 +75,14 @@ export function Navbar() {
       <div className="container-custom">
         <div className="flex justify-between items-center h-20">
           {/* Brand Logo */}
-          <Link to="/" className="flex items-center group py-1">
-            <Logo className="h-12" />
+          {/* <Link to="/" className="flex items-center group py-1">
+            <Logo className="h-16" />
+          </Link> */}
+          <Link to="/" className="flex items-center gap-2 md:gap-3 group py-1 min-w-0">
+          <Logo className="h-16 flex-shrink-0" />
+          <span className="hidden md:block font-headline font-bold text-primary text-sm lg:text-base tracking-wide whitespace-nowrap">
+           MSP ENGINEERING CONSULTANT PVT LTD
+           </span>
           </Link>
 
           {/* Desktop Navigation Links */}

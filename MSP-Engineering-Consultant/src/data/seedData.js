@@ -1,7 +1,7 @@
 import madhupImg from '../assets/madhup-singh.jpeg';
 import sanjeevImg from '../assets/sanjeev-kolhe.jpeg';
 import avinashImg from '../assets/avinash-tayde.jpeg';
-import devendraImg from '../assets/devendra-navale.jpeg';
+// import devendraImg from '../assets/devendra-navale.jpeg';
 import anuragImg from '../assets/anurag-songer.jpeg';
 import amixorImg from '../assets/amixor.png';
 import dycineoncologyImg from '../assets/dycine_oncology.png';
@@ -304,7 +304,7 @@ export const SEED_PROJECTS = [
     scope: "Turnkey HVAC, Cleanroom Class A/B, and Process Piping Design",
     description: "Comprehensive engineering design and validation for a 120,000 sq.ft state-of-the-art sterile oncology injectables facility. Included two high-capacity lyophilizers, isolated barrier systems (RABS), continuous environmental monitoring, and full USFDA compliance qualification.",
     image_url: welltekImg,
-    featured: true,
+    featured: false,
     stats: {
       area: "120,000 sq.ft",
       cleanroomClass: "ISO 5 (Class A/B)",
@@ -326,7 +326,7 @@ export const SEED_PROJECTS = [
     scope: "Containment Engineering (OEB 5) & Solvent Recovery System",
     description: "Engineering consultancy and detailed piping design for an advanced HPAPI manufacturing plant requiring OEB 5 containment level (<1 µg/m³). Designed closed-loop isolator transfers, vacuum transfer systems, dedicated scrubbers, and automated solvent distillation plants.",
     image_url: genoImg,
-    featured: true,
+    featured: false,
     stats: {
       area: "75,000 sq.ft",
       cleanroomClass: "ISO 7 (OEB 5)",
@@ -341,14 +341,14 @@ export const SEED_PROJECTS = [
   },
   {
     id: "p3",
-    title: "DYCINE PHARMACEUTICALS PVT. LTD. (OSD PLANT)",
+    title: "DYCINE PHARMACEUTICALS LTD. (OSD PLANT)",
     slug: "monoclonal-antibody-biotech-suite",
     sector: "pharmaceutical",
     location: "SIP - PITHAMPUR (M.P.), India",
     scope: "Upstream & Downstream Process Architecture and WFI Distribution",
     description: "Concept-to-commissioning engineering for single-use bioreactor suites, chromatography purification skids, and automated CIP/SIP generation systems. Engineered an energy-efficient multi-effect WFI loop delivering 3,000 LPH compliant with European Pharmacopoeia standards.",
     image_url: dycineosdImg,
-    featured: true,
+    featured: false,
     stats: {
       area: "90,000 sq.ft",
       cleanroomClass: "ISO 6 & 7",
@@ -370,7 +370,7 @@ export const SEED_PROJECTS = [
     scope: "HVAC, Dust Extraction, and Automated Material Handling",
     description: "Greenfield project execution for a 4-billion tablets/year capacity facility. Integrated central dust collection, precise relative humidity control for effervescent manufacturing, and automated guided vehicle (AGV) clean corridors.",
     image_url: dycineoncologyImg,
-    featured: true,
+    featured: false,
     stats: {
       area: "210,000 sq.ft",
       cleanroomClass: "ISO 8",
@@ -387,9 +387,9 @@ export const SEED_PROJECTS = [
     id: "p5",
     title: "L2Mtech INDIA PVT. LTD.",
     slug: "continuous-fermentation-biosimilar",
-    sector: "Biotechnology",
+    sector: "Heart Stunt Plant",
     location: "MEDICAL DEVICE PARK UJJAIN (M.P.), India",
-    scope: "Process Automation, SCADA Architecture, and Qualification",
+    scope: "Heart Stunt Plant",
     description: "Detailed automation and electrical design for industrial-scale microbial fermentation. Implemented redundant PLC/SCADA systems with 21 CFR Part 11 electronic batch records and automated harvest recovery loops.",
     image_url: l2mtechImg,
     featured: false,
@@ -497,7 +497,7 @@ export const SEED_PROJECTS = [
     id: "p10",
     title: "SRF LIMITED COATING PLANT EXPANSION",
     slug: "specialty-chemical-bulk-drug",
-    sector: "Pharmaceutical",
+    sector: "Packaging Plant",
     location: "DTA - 01 PITHAMPUR (M.P.), India",
     scope: "Class 1 Div 1 Hazardous Electrical Design & Zero Liquid Discharge (ZLD)",
     description: "Comprehensive safety and environmental engineering including hazardous area classification, explosion-proof electrical systems, scrubber engineering, and integrated ZLD effluent treatment plant.",
@@ -519,7 +519,7 @@ export const SEED_PROJECTS = [
     id: "p11",
     title: "SAMSON SCIENTIFICS AND SURGICAL PVT. LTD.",
     slug: "specialty-chemical-bulk-drug",
-    sector: "Pharmaceutical",
+    sector: "Medical Device Plant",
     location: "MEDICAL DEVICE PARK UJJAIN (M.P.), India",
     scope: "Class 1 Div 1 Hazardous Electrical Design & Zero Liquid Discharge (ZLD)",
     description: "Comprehensive safety and environmental engineering including hazardous area classification, explosion-proof electrical systems, scrubber engineering, and integrated ZLD effluent treatment plant.",
@@ -568,7 +568,7 @@ export const SEED_PROJECTS = [
     scope: "Turnkey HVAC, Cleanroom Class A/B, and Process Piping Design",
     description: "Comprehensive engineering design and validation for a 120,000 sq.ft state-of-the-art sterile oncology injectables facility. Included two high-capacity lyophilizers, isolated barrier systems (RABS), continuous environmental monitoring, and full USFDA compliance qualification.",
     image_url: fortuneImg,
-    featured: true,
+    featured: false,
     stats: {
       area: "120,000 sq.ft",
       cleanroomClass: "ISO 5 (Class A/B)",
@@ -583,14 +583,14 @@ export const SEED_PROJECTS = [
   },
   {
     id: "p14",
-    title: "SOPL PVT. LTD.",
+    title: "SPECIALITY ORGANICS PVT. LTD. COSMATIC PLANT",
     slug: "sterile-injectables-lyophilization-facility",
     sector: "Biotechnology",
     location: "SIP - PITHAMPUR (M.P.), India",
     scope: "Turnkey HVAC, Cleanroom Class A/B, and Process Piping Design",
     description: "Comprehensive engineering design and validation for a 120,000 sq.ft state-of-the-art sterile oncology injectables facility. Included two high-capacity lyophilizers, isolated barrier systems (RABS), continuous environmental monitoring, and full USFDA compliance qualification.",
     image_url: soplImg,
-    featured: true,
+    featured: false,
     stats: {
       area: "120,000 sq.ft",
       cleanroomClass: "ISO 5 (Class A/B)",
@@ -627,7 +627,7 @@ export const SEED_TEAM = [
     id: "t2",
     name: "Dr. Sanjeev N. Kolhe",
     qualification: "Ph.D.",
-    title: "Director",
+    title: "Pharmacist",
     bio: "Distinguished pharmaceutical industry leader with over 30 years of global experience spanning manufacturing, operations, R&D, quality systems, regulatory compliance (USFDA, MHRA, EU-GMP, WHO-GMP, TGA), and strategic leadership as CEO across Africa, Central Asia, Europe, and CIS region.",
     fullBio: [
       "Distinguished pharmaceutical industry leader with over 30 years of global experience spanning manufacturing, operations, R&D, quality systems, regulatory compliance, business development, and strategic leadership.",
@@ -654,26 +654,26 @@ export const SEED_TEAM = [
     photo_url: avinashImg,
     sort_order: 3
   },
-  {
-    id: "t4",
-    name: "Mr. Devendra Navale",
-    qualification: "M.Pharm, M.Sc. Org Chemistry, DPQM, ISO Lead Auditor",
-    title: "Chief Scientific Officer (CSO) & Quality Lead",
-    bio: "Over 30 years of pharmaceutical quality and regulatory leadership. Former Vice President and Site Head of Global Quality and Compliance at Sun Pharma, with prior leadership at Lupin, Jubilant Lifesciences, Aurobindo, IPCA, and Ranbaxy. ISO Lead Auditor (IQA/IRCA & IATCA).",
-    fullBio: [
-      "Over 30 years of experience in the pharmaceutical industry with strong post-graduate degrees in Pharmacy and Chemistry.",
-      "Former Vice President and Site Head of Global Quality and Compliance at Sun Pharma; renowned career at Lupin, Jubilant Lifesciences, Aurobindo, IPCA, and Ranbaxy.",
-      "Spearheaded Quality & Compliance departments, overseeing all quality functions across multiple manufacturing sites.",
-      "Developed and implemented comprehensive Quality Management Systems (QMS) ensuring compliance with FDA, EMA, and international regulatory bodies with minimal observations.",
-      "ISO Lead Auditor certified by IQA/IRCA and IATCA."
-    ],
-    photo_url: devendraImg,
-    sort_order: 4
-  },
+  // {
+  //   id: "t4",
+  //   name: "Mr. Devendra Navale",
+  //   qualification: "M.Pharm, M.Sc. Org Chemistry, DPQM, ISO Lead Auditor",
+  //   title: "Chief Scientific Officer (CSO) & Quality Lead",
+  //   bio: "Over 30 years of pharmaceutical quality and regulatory leadership. Former Vice President and Site Head of Global Quality and Compliance at Sun Pharma, with prior leadership at Lupin, Jubilant Lifesciences, Aurobindo, IPCA, and Ranbaxy. ISO Lead Auditor (IQA/IRCA & IATCA).",
+  //   fullBio: [
+  //     "Over 30 years of experience in the pharmaceutical industry with strong post-graduate degrees in Pharmacy and Chemistry.",
+  //     "Former Vice President and Site Head of Global Quality and Compliance at Sun Pharma; renowned career at Lupin, Jubilant Lifesciences, Aurobindo, IPCA, and Ranbaxy.",
+  //     "Spearheaded Quality & Compliance departments, overseeing all quality functions across multiple manufacturing sites.",
+  //     "Developed and implemented comprehensive Quality Management Systems (QMS) ensuring compliance with FDA, EMA, and international regulatory bodies with minimal observations.",
+  //     "ISO Lead Auditor certified by IQA/IRCA and IATCA."
+  //   ],
+  //   photo_url: devendraImg,
+  //   sort_order: 4
+  // },
   {
     id: "t5",
     name: "Mr. Anurag Songer",
-    qualification: "PMP®, M.E. (Structural)",
+    qualification: "PMP, M.E. (Structural)",
     title: "Project Management Lead",
     bio: "Seasoned leader with extensive experience in pharmaceuticals, APIs, and allied project management. Specializing in structural engineering, project coordination, scheduling, monitoring, and cost optimization, coordinating clients, contractors, and agencies for smooth delivery.",
     fullBio: [
@@ -762,5 +762,12 @@ export const SERVICE_CATEGORIES = [
     icon: "verified_user",
     heroBg: "bg-primary",
     count: 6
-  }
+  },
+  {
+    title: "Construction Management",
+    slug: "construction-management",
+    shortDesc: "Inter Disciplinary, Bill certification",
+    icon:"engineering",
+    heroBg: "bg-primary-container",
+  },
 ];

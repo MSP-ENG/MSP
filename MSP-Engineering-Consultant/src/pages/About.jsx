@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Leadership } from '../components/sections/Leadership';
 import { Breadcrumb } from '../components/ui/Breadcrumb';
 import { ShieldCheck, Target, Eye, Award, CheckCircle2, Users, ArrowRight, X, Briefcase, GraduationCap } from 'lucide-react';
 import { Button } from '../components/ui/Button';
@@ -69,6 +70,7 @@ function ClientLogo({ name, domain }) {
 
 export function About() {
   const { team } = useTeam();
+  const otherMembers = team.filter((member) => !member.name?.includes('Madhup Singh'));
   const [selectedMember, setSelectedMember] = useState(null);
 
   const values = [
@@ -106,37 +108,36 @@ export function About() {
   return (
     <div>
       {/* Hero Header */}
-      <section className="bg-surface py-12 md:py-16 border-b border-outline-variant">
+      <section className="bg-surface py-5 md:py-16 border-b border-outline-variant">
         <div className="container-custom">
-          <Breadcrumb
+          {/* <Breadcrumb
             items={[
               { label: 'Home', to: '/' },
               { label: 'About Us' }
             ]}
-          />
+          /> */}
           <div className="max-w-3xl">
             <span className="text-xs font-bold uppercase tracking-wider text-secondary">
               Company Profile & Key Persons
             </span>
-            <h1 className="font-headline font-bold text-3xl sm:text-4xl md:text-5xl text-primary mt-2 leading-tight">
+            <h1  className="font-headline font-bold text-3xl sm:text-5xl md:text-5xl text-primary mt-2 leading-tight">ABOUT US</h1>
+            <h3>
               Engineering Trust for the World's Leading Pharma & Biotech Manufacturers
-            </h1>
+            </h3>
             <p className="font-body text-base sm:text-lg text-on-surface-variant mt-4 leading-relaxed">
               <strong>ISO 9001:2015</strong> Certified Company.
-
-              Delivering innovative and superior solutions for over a decade
-
-              Our comprehensive services encompass Architectural & Engineering Design tailored for various sectors including Pharmaceuticals, API, Bulk drugs, Biotechnology, Research & Development BSL 1 to BSL 5, Food & cosmetics, and other industries.
-
-              Proficient in executing both <strong>Greenfield</strong> & <strong>Bownfield</strong> projects across enterprises of all sizes.
-
-              Our Pharmaceutical plant designs adhere to stringent regulatory standards such as <strong>USFDA</strong>, <strong>MHRA</strong>, <strong>WHO Geneva</strong>, <strong>cGMP</strong>, <strong>PICS</strong>, <strong>TGA</strong>, and more.
+              <ul  className="list-disc list-inside  space-y-2">
+                <li>Delivering innovative and superior solutions for over a decade</li>
+                <li>Our comprehensive services encompass Architectural & Engineering Design tailored for various sectors including Pharmaceuticals, API, Bulk drugs, Biotechnology, Research & Development BSL 1 to BSL 5, Food & cosmetics, and other industries.</li>
+                <li> Proficient in executing both <strong>Greenfield</strong> & <strong>Bownfield</strong> projects across enterprises of all sizes.</li>
+                <li>Our Pharmaceutical plant designs adhere to stringent regulatory standards such as <strong>USFDA</strong>, <strong>MHRA</strong>, <strong>WHO Geneva</strong>, <strong>cGMP</strong>, <strong>PICS</strong>, <strong>TGA</strong>, and more.</li>
+              </ul>
             </p>
           </div>
         </div>
       </section>
 
-      {/* Vision & Mission Cards */}
+      {/* Vision & Mission Cards 
       <section className="section-padding bg-surface-container-low border-b border-outline-variant">
         <div className="container-custom">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -181,9 +182,9 @@ export function About() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {/* Core Values */}
+      {/* Core Values 
       <section className="section-padding bg-surface border-b border-outline-variant">
         <div className="container-custom">
           <div className="max-w-2xl mb-12">
@@ -207,9 +208,9 @@ export function About() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {/* Project Execution Methodology */}
+      {/* Project Execution Methodology 
       <section className="section-padding bg-surface-container-low border-b border-outline-variant">
         <div className="container-custom">
           <div className="max-w-2xl mb-12">
@@ -242,12 +243,17 @@ export function About() {
             ))}
           </div>
         </div>
+      </section> */}
+
+      {/* Key Leadership Persons (5 Members) */}
+            <Leadership />
+      <section className="bg-surface border-outline-variant" id="leadership">
       </section>
 
       {/* Key Leadership Persons (5 Members) */}
       <section className="section-padding bg-surface border-b border-outline-variant" id="leadership">
         <div className="container-custom">
-          <div className="max-w-2xl mb-12">
+          <div className="max-w-2xl mb-10">
             <span className="text-xs font-bold uppercase tracking-wider text-secondary">
               Key Persons & Leadership Team
             </span>
@@ -259,8 +265,8 @@ export function About() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
-            {team.map((member) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-5">
+            {otherMembers.map((member) => (
               <div
                 key={member.id}
                 className="bg-surface-container-lowest border border-outline-variant rounded-lg overflow-hidden flex flex-col shadow-ambient hover:shadow-ambient-lg hover:border-primary transition-all duration-300 group"

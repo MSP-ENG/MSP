@@ -117,7 +117,7 @@ export function Contact() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             {/* Left Col: Contact Form */}
             <div className="lg:col-span-7">
-              <div className="bg-surface-container-lowest border border-outline-variant rounded-xl p-8 sm:p-10 shadow-ambient">
+              <div className="bg-stone-100 border border-outline-variant rounded-xl p-8 sm:p-10 shadow-ambient">
                 <div className="mb-6">
                   <h2 className="font-headline font-bold text-xl sm:text-2xl text-primary">
                     Project Enquiry Form

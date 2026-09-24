@@ -1,104 +1,129 @@
-import React from 'react';
-import { ArrowRight, ShieldCheck, CheckCircle2, Award, Zap } from 'lucide-react';
-import { Button } from '../ui/Button';
+import React, { useState, useEffect } from 'react';
+import heroVideo from '../../videos/hero.mp4';
+import { Link } from 'react-router-dom';
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
 
-export function Hero({
-  title = "Precision Engineering & Regulatory Mastery for Pharma & Biotech",
-  subtitle = "From conceptual master planning to turnkey cleanroom engineering, high-purity piping, and USFDA/EU-GMP validation dossiers. Built with unwavering industrial precision.",
-  showStats = true
-}) {
+const FALLBACK_IMAGE =
+  'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1600&q=80';
+
+const slides = [
+  {
+    heading: 'With more than 28 years of experience',
+    text: 'From conceptual master planning to turnkey cleanroom engineering, high-purity piping, and USFDA/EU-GMP validation dossiers.',
+    cta: { label: 'View Details', to: '/about' },
+  },
+  {
+    heading: 'Engineering cleanrooms with zero-defect precision',
+    text: 'ISO 5 Class A laminar airflow workstations with continuous particle monitoring and automated CIP/SIP loops.',
+    cta: { label: 'Explore Services', to: '/services' },
+  },
+  {
+    heading: '40+ USFDA approved plants delivered',
+    text: 'Turnkey EPCM, validation and documentation for pharma, API and biotech facilities.',
+    cta: { label: 'See Our Projects', to: '/projects' },
+  },
+];
+
+export function Hero() {
+  const [index, setIndex] = useState(0);
+  const [videoFailed, setVideoFailed] = useState(false);
+
+  const next = () => setIndex((i) => (i + 1) % slides.length);
+
+  // Auto-advance every 6 seconds (restarts when the slide changes)
+  useEffect(() => {
+    const timer = setTimeout(next, 3000);
+    return () => clearTimeout(timer);
+  }, [index]);
+
+  const slide = slides[index];
+
   return (
-    <section className="relative bg-surface overflow-hidden border-b border-outline-variant">
-      {/* Background Subtle Gradient & Grid Accent */}
-      <div className="absolute inset-0 bg-[radial-gradient(#002a3c_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.03] pointer-events-none" />
-      
-      <div className="container-custom pt-12 pb-16 md:pt-20 md:pb-24">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Left Column: Copy & Actions */}
-          <div className="lg:col-span-7 flex flex-col gap-6">
-            {/* Accreditation Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container border border-outline-variant text-primary text-xs font-semibold w-max">
-              <ShieldCheck className="w-4 h-4 text-secondary-container" />
-              <span>USFDA • WHO-GMP • EU-GMP • ISO 14644 Compliant</span>
-            </div>
+    <section className="relative w-full h-[85vh] min-h-[560px] overflow-hidden bg-primary">
+      {/* Background: video, or photo if the video can't load */}
+      {videoFailed ? (
+        <img
+          src={FALLBACK_IMAGE}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+      ) : (
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          src = {heroVideo}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          aria-hidden="true"
+          onError={(e) => {
+            console.error(
+              'Hero video failed. Code:',
+              e.currentTarget.error?.code,
+              e.currentTarget.error?.message
+            );
+            setVideoFailed(true);
+          }}
+        >
+        </video>
+      )}
 
-            {/* Main Headline */}
-            <h1 className="font-headline font-bold text-3xl sm:text-4xl md:text-5xl lg:text-[52px] text-primary leading-[1.15] tracking-tight">
-              Engineering Cleanrooms & Process Facilities with <span className="text-secondary">Zero-Defect</span> Precision.
-            </h1>
+      {/* Dark overlay so the white text stays readable */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/10 pointer-events-none" />
+      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
 
-            {/* Sub-headline */}
-            <p className="font-body text-base sm:text-lg text-on-surface-variant leading-relaxed max-w-2xl">
-              {subtitle}
-            </p>
-
-            {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
-              <Button
-                to="/contact"
-                variant="amber"
-                size="lg"
-                icon={<ArrowRight className="w-4 h-4" />}
-              >
-                Request Facility Consultation
-              </Button>
-              <Button
-                to="/services"
-                variant="secondary"
-                size="lg"
-              >
-                Explore 5 Core Disciplines
-              </Button>
-            </div>
-
-            {/* Quick Feature Checklist */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-6 border-t border-outline-variant">
-              <div className="flex items-center gap-2 text-xs font-semibold text-on-surface">
-                <CheckCircle2 className="w-4 h-4 text-emerald-700 flex-shrink-0" />
-                <span>3D BIM Clash-Free Piping</span>
-              </div>
-              <div className="flex items-center gap-2 text-xs font-semibold text-on-surface">
-                <CheckCircle2 className="w-4 h-4 text-emerald-700 flex-shrink-0" />
-                <span>Cascade ISO Cleanrooms</span>
-              </div>
-              <div className="flex items-center gap-2 text-xs font-semibold text-on-surface">
-                <CheckCircle2 className="w-4 h-4 text-emerald-700 flex-shrink-0" />
-                <span>Turnkey EPCM & CSV</span>
-              </div>
-            </div>
+      {/* Slide content */}
+      <div className="container-custom relative z-10 h-full flex items-center">
+        <div key={index} className="max-w-3xl animate-in fade-in slide-in-from-bottom-4 duration-500">
+          <h1 className="font-headline font-extrabold uppercase text-white text-4xl sm:text-5xl lg:text-7xl leading-[1.05] tracking-tight">
+            {slide.heading}
+          </h1>
+          <p className="mt-5 max-w-xl text-white/90 text-base sm:text-lg leading-relaxed">
+            {slide.text}
+          </p>
+          <div className="mt-8 flex flex-wrap items-center gap-4">
+            <Link
+              to={slide.cta.to}
+              className="inline-flex items-center gap-2 bg-[#ffcc00] hover:bg-[#ffd633] text-black font-bold uppercase px-8 py-4 transition-colors"
+            >
+              {slide.cta.label}
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 border-2 border-white text-white hover:bg-white hover:text-primary font-bold uppercase px-8 py-[14px] transition-colors"
+            >
+              Request Consultation
+            </Link>
           </div>
+        </div>
+      </div>
 
-          {/* Right Column: Hero Visual Graphic / Industrial Display */}
-          <div className="lg:col-span-5 relative">
-            <div className="relative rounded-lg overflow-hidden border border-outline-variant shadow-ambient-lg bg-surface-container-lowest">
-              <img
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80"
-                alt="Aseptic Pharmaceutical Cleanroom and High-Purity Engineering"
-                className="w-full h-80 sm:h-96 object-cover"
+      {/* Bottom strip: checklist + dots */}
+      <div className="absolute bottom-0 inset-x-0 z-10">
+        <div className="container-custom pb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div className="hidden md:flex items-center gap-6 text-white text-xs font-semibold">
+            {['3D BIM Clash-Free Piping', 'Cascade ISO Cleanrooms', 'Turnkey EPCM & CSV'].map((item) => (
+              <span key={item} className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-[#ffcc00]" />
+                {item}
+              </span>
+            ))}
+          </div>
+          <div className="flex items-center gap-2">
+            {slides.map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => setIndex(i)}
+                aria-label={`Go to slide ${i + 1}`}
+                className={`h-2 rounded-full transition-all ${
+                  i === index ? 'w-8 bg-[#ffcc00]' : 'w-2 bg-white/60 hover:bg-white'
+                }`}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent flex flex-col justify-end p-6 text-on-primary">
-                <div className="inline-flex items-center gap-1.5 text-xs font-bold text-secondary-fixed mb-1">
-                  <Zap className="w-3.5 h-3.5" /> FEATURED SPECIFICATION
-                </div>
-                <h3 className="font-headline font-bold text-lg text-on-primary">
-                  Sterile Oncology & Lyophilization Suite
-                </h3>
-                <p className="text-xs text-primary-fixed mt-1">
-                  ISO 5 Class A laminar airflow workstations with continuous particle monitoring and automated CIP/SIP loops.
-                </p>
-              </div>
-            </div>
-
-            {/* Floating Metric Card */}
-            <div className="hidden sm:flex absolute -bottom-6 -left-6 bg-surface-container-lowest border border-outline-variant p-4 rounded shadow-ambient-lg items-center gap-3">
-              <div className="w-12 h-12 rounded bg-secondary-container text-on-secondary-container flex items-center justify-center font-headline font-bold text-xl">
-                28+
-              </div>
-              <div>
-                <div className="text-xs font-bold text-primary">Years Experience</div>
-                <div className="text-[11px] text-on-surface-variant">40+ USFDA Approved Plants</div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>

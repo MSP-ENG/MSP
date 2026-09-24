@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-
+import MadhupSingh from "./pages/MadhupSingh";
 import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { ServicesOverview } from './pages/services/ServicesOverview';
@@ -18,6 +18,7 @@ export function AppRoutes() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
+      <Route path="/team/madhup-singh" element={<MadhupSingh />} />
       <Route path="/services" element={<ServicesOverview />} />
       <Route path="/services/consultancy" element={<Consultancy />} />
       <Route path="/services/engineering-design" element={<EngineeringDesign />} />

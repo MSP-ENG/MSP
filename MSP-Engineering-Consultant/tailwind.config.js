@@ -86,7 +86,16 @@ export default {
       boxShadow: {
         'ambient': '0 2px 8px 0 rgba(0, 42, 60, 0.06)',
         'ambient-lg': '0 8px 24px -4px rgba(0, 42, 60, 0.08)',
-      }
+      },
+      keyframes: {
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+      },
+      animation: {
+        marquee: "marquee 30s linear infinite",
+      },
     },
   },
   plugins: [],

@@ -4,6 +4,7 @@ import { ProjectCardGrid } from '../components/sections/ProjectCardGrid';
 import { useProjects } from '../hooks/useProjects';
 import { Search, Filter, Layers } from 'lucide-react';
 import { CTASection } from '../components/sections/CTASection';
+import ProjectsClientLogoSlider from '../components/sections/ProjectsClientLogoSlider';
 
 export function Projects() {
   const [activeSector, setActiveSector] = useState('All');
@@ -26,14 +27,15 @@ export function Projects() {
   return (
     <div>
       {/* Header */}
-      <section className="bg-surface py-12 md:py-16 border-b border-outline-variant">
+      <section className="bg-surface-container-lowest py-0 border-outline-variant sticky top-20 z-30 shadow-sm"></section>
+      <section className="bg-surface py-8 md:py-16 border-outline-variant">
         <div className="container-custom">
-          <Breadcrumb
+          {/* <Breadcrumb
             items={[
               { label: 'Home', to: '/' },
               { label: 'Projects & Clients' }
             ]}
-          />
+          /> */}
           <div className="max-w-3xl">
             <span className="text-xs font-bold uppercase tracking-wider text-secondary">
               Proven Global Portfolio
@@ -47,6 +49,18 @@ export function Projects() {
           </div>
         </div>
       </section>
+
+                  {/* Header */}
+      <section className="bg-secondary-fixed-dim py-10 md:py-10 border-outline-variant">
+        {/* ...unchanged... */}
+        <h1 className="text-center font-headline font-bold uppercase text-4xl md:text-4xl">
+          OUR CLIENT'S
+       </h1>
+      </section>
+
+      {/* Client Logo Slider */}
+      <ProjectsClientLogoSlider />
+
 
       {/* Filter and Search Bar */}
       <section className="bg-surface-container-lowest py-6 border-b border-outline-variant sticky top-20 z-30 shadow-sm">
