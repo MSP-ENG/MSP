@@ -1,7 +1,7 @@
 import madhupImg from '../assets/madhup-singh.jpeg';
 import sanjeevImg from '../assets/sanjeev-kolhe.jpeg';
 import avinashImg from '../assets/avinash-tayde.jpeg';
-// import devendraImg from '../assets/devendra-navale.jpeg';
+import hemalataImg from '../assets/hemalata.jpeg';
 import anuragImg from '../assets/anurag-songer.jpeg';
 import amixorImg from '../assets/amixor.png';
 import dycineoncologyImg from '../assets/dycine_oncology.png';
@@ -17,7 +17,8 @@ import welltekImg from '../assets/welltek.png';
 import genoImg from '../assets/geno.png';
 import soplImg from '../assets/sopl.png';
 import fortuneImg from '../assets/fortune.png';
-
+import vijetaImg from '../assets/vijeta-mathan.png';
+import kamran_khanImg from '../assets/Kamran-Khan.png';
 export const SEED_SERVICES = [
   // 1. Consultancy
   {
@@ -626,7 +627,7 @@ export const SEED_TEAM = [
   {
     id: "t2",
     name: "Dr. Sanjeev N. Kolhe",
-    qualification: "Ph.D.",
+    qualification: "",
     title: "Pharmacist",
     bio: "Distinguished pharmaceutical industry leader with over 30 years of global experience spanning manufacturing, operations, R&D, quality systems, regulatory compliance (USFDA, MHRA, EU-GMP, WHO-GMP, TGA), and strategic leadership as CEO across Africa, Central Asia, Europe, and CIS region.",
     fullBio: [
@@ -641,7 +642,7 @@ export const SEED_TEAM = [
   {
     id: "t3",
     name: "Mr. Avinash Tayde",
-    qualification: "Science Graduate",
+    qualification: "",
     title: "Technical Head",
     bio: "Over 35 years of expertise in the pharmaceutical industry driving results through innovation, leadership, and operational excellence. Comprehensive expertise in production planning, plant upgradation, and handling diverse dosage forms (tablets, capsules, injectables, liquids, and softgels).",
     fullBio: [
@@ -654,26 +655,22 @@ export const SEED_TEAM = [
     photo_url: avinashImg,
     sort_order: 3
   },
-  // {
-  //   id: "t4",
-  //   name: "Mr. Devendra Navale",
-  //   qualification: "M.Pharm, M.Sc. Org Chemistry, DPQM, ISO Lead Auditor",
-  //   title: "Chief Scientific Officer (CSO) & Quality Lead",
-  //   bio: "Over 30 years of pharmaceutical quality and regulatory leadership. Former Vice President and Site Head of Global Quality and Compliance at Sun Pharma, with prior leadership at Lupin, Jubilant Lifesciences, Aurobindo, IPCA, and Ranbaxy. ISO Lead Auditor (IQA/IRCA & IATCA).",
-  //   fullBio: [
-  //     "Over 30 years of experience in the pharmaceutical industry with strong post-graduate degrees in Pharmacy and Chemistry.",
-  //     "Former Vice President and Site Head of Global Quality and Compliance at Sun Pharma; renowned career at Lupin, Jubilant Lifesciences, Aurobindo, IPCA, and Ranbaxy.",
-  //     "Spearheaded Quality & Compliance departments, overseeing all quality functions across multiple manufacturing sites.",
-  //     "Developed and implemented comprehensive Quality Management Systems (QMS) ensuring compliance with FDA, EMA, and international regulatory bodies with minimal observations.",
-  //     "ISO Lead Auditor certified by IQA/IRCA and IATCA."
-  //   ],
-  //   photo_url: devendraImg,
-  //   sort_order: 4
-  // },
+  {
+    id: "t4",
+    name: "Mrs. Hemalata Kaushal",
+    qualification: "",
+    title: "Mechanical Engineer",
+    bio: "She is a Mechanical Engineer with 6 years of experience in industrial projects, specializing in mechanical systems, project coordination, and engineering support.",
+    fullBio: [
+      "Hemalata Kaushal is a Mechanical Engineer with 6 years of experience in industrial projects, specializing in mechanical systems, project coordination, and engineering support."
+    ],
+    photo_url: hemalataImg,
+    sort_order: 4
+  },
   {
     id: "t5",
     name: "Mr. Anurag Songer",
-    qualification: "PMP, M.E. (Structural)",
+    qualification: "",
     title: "Project Management Lead",
     bio: "Seasoned leader with extensive experience in pharmaceuticals, APIs, and allied project management. Specializing in structural engineering, project coordination, scheduling, monitoring, and cost optimization, coordinating clients, contractors, and agencies for smooth delivery.",
     fullBio: [
@@ -684,39 +681,76 @@ export const SEED_TEAM = [
     ],
     photo_url: anuragImg,
     sort_order: 5
-  }
+  },
+  {
+    id: "t6",
+    name: "Mrs. Vijeta Mathan",
+    qualification: "",
+    title: "Seasoned Architect",
+    bio: "Vijeta Mathan is a seasoned Architect with 16+ years of professional experience in architectural planning, design, and project coordination. Over the course of her career, she has successfully contributed to the design and execution of 200+ projects across various sectors.",
+    fullBio: [
+  "Vijeta Mathan is a seasoned Architect with 16+ years of professional experience in architectural planning, design, and project coordination. Over the course of her career, she has successfully contributed to the design and execution of 200+ projects across various sectors.",
+  "She specializes in Pharmaceutical, API, Healthcare, and Industrial projects, with strong expertise in developing functional, compliant, and efficient facilities aligned with industry requirements and GMP standards.",
+  "Her professional experience includes successfully handling assignments for reputed organizations such as Felix Generics Pvt. Ltd., Glenmark Pharmaceuticals Ltd., Sanofi India Ltd., and other industrial and pharmaceutical clients.",
+  "With a strong understanding of pharmaceutical facility planning, GMP-oriented layouts, production areas, cleanroom requirements, utilities, material and personnel movement, and regulatory considerations, Vijeta brings a practical and detail-oriented approach to every project.",
+  "Key Highlights",
+  "16+ years of architectural experience",
+  "200+ projects designed and contributed to",
+  "Specialized in Pharmaceutical & Industrial Architecture",
+  "Expertise in GMP-compliant facility planning",
+  "Experience with Pharma, API, Healthcare & Manufacturing facilities",
+  "Strong coordination with Civil, Structural, MEP and HVAC teams",
+  "Experience with reputed clients including Felix Generics, Glenmark Pharmaceuticals and Sanofi India"
+    ],
+    photo_url: vijetaImg,
+    sort_order: 6
+  },
+  {
+    id: "t5",
+    name: "Mr. Kamran Khan",
+    qualification: "",
+    title: "Structural Engineer",
+    bio: "Kamran Khan is a Structural Engineer with 15+ years of experience in industrial projects. He specializes in structural design, analysis, and engineering solutions for industrial and pharmaceutical facilities, with strong experience in coordinating structural requirements with architectural and MEP services.",
+    fullBio: [
+      "Structural Engineer – Kamran Khan",
+      "Kamran Khan is a Structural Engineer with 15+ years of experience in industrial projects.",
+      " He specializes in structural design, analysis, and engineering solutions for industrial and pharmaceutical facilities, with strong experience in coordinating structural requirements with architectural and MEP services.",
+    ],
+    photo_url: kamran_khanImg,
+    sort_order: 7
+  },
 ];
 
 export const SEED_TESTIMONIALS = [
   {
     id: "tm1",
-    client_name: "Dr. Arvind Kelkar",
-    role: "VP Operations",
-    company: "BioNexus Therapeutics Ltd.",
+    client_name: "Dr. Piyush Singh",
+    role: "Director",
+    company: "Dycine Pharmaceutical LTD",
     quote: "MSP Engineering delivered our sterile injectable facility 2 months ahead of schedule. Their mastery of USFDA cGMP regulations and cleanroom airflow dynamics was instrumental in our first-pass regulatory audit.",
     sector: "Pharmaceutical"
   },
   {
     id: "tm2",
-    client_name: "Prakash Somani",
-    role: "Director of Projects",
-    company: "Aura Pharma Intermediates",
+    client_name: "Gunjan Kumar",
+    role: "Director",
+    company: "Fortune Pharmaceutical India PVT LTD",
     quote: "The precision in process piping, WFI loop sizing, and 3D clash resolution saved us over 18% in rework and fabrication costs. MSP is our go-to engineering consultant.",
-    sector: "API"
+    sector: "Pharmaceutical"
   },
   {
     id: "tm3",
-    client_name: "Kavita Raman",
-    role: "Head of QA & Compliance",
-    company: "Zenith Biotech Formulations",
+    client_name: "Preyesh Sinha",
+    role: "Director",
+    company: "Mericana Pharmaceuticals PVT LTD",
     quote: "Their validation team produced the most thorough DQ/IQ/OQ/PQ documentation dossiers we have ever seen. Flawless CSV implementation and seamless training for our site staff.",
-    sector: "Biotechnology"
+    sector: "Pharmaceutical"
   },
   {
     id: "tm4",
-    client_name: "Ramesh Chordia",
-    role: "Managing Director",
-    company: "Synergy Bulk Drugs Ltd.",
+    client_name: "Kausaf Nene",
+    role: "Director",
+    company: "Tufnet PVT LTD",
     quote: "From master planning to factory acceptance testing, MSP Engineering showed unmatched technical discipline, transparent project reporting, and prompt problem-solving.",
     sector: "Industrial"
   }

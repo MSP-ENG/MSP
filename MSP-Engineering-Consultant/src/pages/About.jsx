@@ -272,11 +272,11 @@ export function About() {
                 className="bg-surface-container-lowest border border-outline-variant rounded-lg overflow-hidden flex flex-col shadow-ambient hover:shadow-ambient-lg hover:border-primary transition-all duration-300 group"
               >
                 {/* Photo */}
-                <div className="h-56 overflow-hidden bg-surface-container relative">
+                <div className="h-22 overflow-hidden bg-surface-container relative">
                   <img
                     src={member.photo_url}
                     alt={member.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-35 h-30 object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
                     onError={(e) => {
                       if (member.fallback_photo && e.currentTarget.src !== member.fallback_photo) {
