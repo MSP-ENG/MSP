@@ -61,9 +61,7 @@ ALLOWED_HOSTS = [
     host.strip()
     for host in os.getenv(
         'ALLOWED_HOSTS',
-        '127.0.0.1,localhost',
-        'msp-backend-ten.vercel.app',
-        'msp-backend-cnf358xbt-abhays-projects-cbe3eeb1.vercel.app'
+        '127.0.0.1,localhost,mspbackend.vercel.app,msp-backend-ten.vercel.app,msp-backend-cnf358xbt-abhays-projects-cbe3eeb1.vercel.app'
     ).split(',')
     if host.strip()
 ]
