@@ -657,18 +657,6 @@ export const SEED_TEAM = [
   },
   {
     id: "t4",
-    name: "Mrs. Hemalata Kaushal",
-    qualification: "",
-    title: "Mechanical Engineer",
-    bio: "She is a Mechanical Engineer with 6 years of experience in industrial projects, specializing in mechanical systems, project coordination, and engineering support.",
-    fullBio: [
-      "Hemalata Kaushal is a Mechanical Engineer with 6 years of experience in industrial projects, specializing in mechanical systems, project coordination, and engineering support."
-    ],
-    photo_url: hemalataImg,
-    sort_order: 4
-  },
-  {
-    id: "t5",
     name: "Mr. Anurag Songer",
     qualification: "",
     title: "Project Management Lead",
@@ -680,10 +668,10 @@ export const SEED_TEAM = [
       "Meticulous structural engineering approach coupled with PMP® certified management acumen."
     ],
     photo_url: anuragImg,
-    sort_order: 5
+    sort_order: 4
   },
   {
-    id: "t6",
+    id: "t5",
     name: "Mrs. Vijeta Mathan",
     qualification: "",
     title: "Seasoned Architect",
@@ -703,10 +691,10 @@ export const SEED_TEAM = [
   "Experience with reputed clients including Felix Generics, Glenmark Pharmaceuticals and Sanofi India"
     ],
     photo_url: vijetaImg,
-    sort_order: 6
+    sort_order: 5
   },
   {
-    id: "t5",
+    id: "t6",
     name: "Mr. Kamran Khan",
     qualification: "",
     title: "Structural Engineer",
@@ -717,6 +705,18 @@ export const SEED_TEAM = [
       " He specializes in structural design, analysis, and engineering solutions for industrial and pharmaceutical facilities, with strong experience in coordinating structural requirements with architectural and MEP services.",
     ],
     photo_url: kamran_khanImg,
+    sort_order: 6
+  },
+    {
+    id: "t7",
+    name: "Mrs. Hemalata Kaushal",
+    qualification: "",
+    title: "Civil Engineer",
+    bio: "She is a Mechanical Engineer with 6 years of experience in industrial projects, specializing in mechanical systems, project coordination, and engineering support.",
+    fullBio: [
+      "Hemalata Kaushal is a Mechanical Engineer with 6 years of experience in industrial projects, specializing in mechanical systems, project coordination, and engineering support."
+    ],
+    photo_url: hemalataImg,
     sort_order: 7
   },
 ];

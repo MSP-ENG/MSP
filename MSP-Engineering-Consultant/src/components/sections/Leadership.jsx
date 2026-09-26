@@ -25,7 +25,7 @@ export function Leadership() {
               <img
                 src={leader.photo}
                 alt={leader.name}
-                className="w-60 h- object-cover object-top"
+                className="w-80 h- object-cover object-top"
               />
               <h3 className="mt-8 text-xl md:text-2xl text-white font-medium">
                 {leader.name}
