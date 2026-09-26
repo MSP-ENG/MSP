@@ -61,7 +61,7 @@ ALLOWED_HOSTS = [
     host.strip()
     for host in os.getenv(
         'ALLOWED_HOSTS',
-        '127.0.0.1,localhost'
+        '127.0.0.1,localhost,msp-backend-alpha.vercel.app'
     ).split(',')
     if host.strip()
 ]
@@ -290,7 +290,21 @@ CORS_ALLOWED_ORIGINS = [
     origin.strip()
     for origin in os.getenv(
         'CORS_ALLOWED_ORIGINS',
-        'http://localhost:5173,http://localhost:3000'
+        'http://localhost:5173,http://localhost:3000,https://mspcon.in,https://www.mspcon.in'
+    ).split(',')
+    if origin.strip()
+]
+
+
+# ============================================================
+# CSRF TRUSTED ORIGINS
+# ============================================================
+
+CSRF_TRUSTED_ORIGINS = [
+    origin.strip()
+    for origin in os.getenv(
+        'CSRF_TRUSTED_ORIGINS',
+        'http://localhost:5173,http://localhost:3000,https://mspcon.in,https://www.mspcon.in'
     ).split(',')
     if origin.strip()
 ]
