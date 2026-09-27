@@ -1,14 +1,17 @@
-"""
-URL configuration for mspcon_backend project.
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/5.1/topics/http/urls/
-"""
-
 from django.contrib import admin
+from django.http import JsonResponse
 from django.urls import path, include
 
+
+def home(request):
+    return JsonResponse({
+        "status": "success",
+        "message": "MSP Backend API is running",
+    })
+
+
 urlpatterns = [
+    path('', home, name='home'),
     path('admin/', admin.site.urls),
     path('api/enquiries/', include('enquiries.urls')),
 ]
