@@ -164,9 +164,16 @@ ASGI_APPLICATION = 'mspcon_backend.asgi.application'
 # Local development:
 # If DATABASE_URL is not present, uses SQLite.
 
-DATABASE_URL = os.getenv('DATABASE_URL')
+# DATABASE_URL = os.getenv('DATABASE_URL')
+load_dotenv(BASE_DIR / '.env')
 
+# Load Vercel production environment when available
+production_env = BASE_DIR / '.env.production.local'
 
+if production_env.exists():
+    load_dotenv(production_env, override=False)
+
+DATABASE_URL = os.getenv('DATABASE_URL', '')
 if DATABASE_URL:
 
     # --------------------------------------------------------
