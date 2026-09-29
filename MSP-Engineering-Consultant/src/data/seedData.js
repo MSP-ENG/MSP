@@ -712,9 +712,9 @@ export const SEED_TEAM = [
     name: "Mrs. Hemalata Kaushal",
     qualification: "",
     title: "Civil Engineer",
-    bio: "She is a Mechanical Engineer with 6 years of experience in industrial projects, specializing in mechanical systems, project coordination, and engineering support.",
+    bio: "She is a Civil Engineer with 6 years of experience in industrial projects, specializing in mechanical systems, project coordination, and engineering support.",
     fullBio: [
-      "Hemalata Kaushal is a Mechanical Engineer with 6 years of experience in industrial projects, specializing in mechanical systems, project coordination, and engineering support."
+      "Hemalata Kaushal is a Civil Engineer with 6 years of experience in industrial projects, specializing in mechanical systems, project coordination, and engineering support."
     ],
     photo_url: hemalataImg,
     sort_order: 7
